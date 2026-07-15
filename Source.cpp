@@ -1,15 +1,16 @@
 #include <iostream>
+#include <string>
 
 int main()
 {
-	int numb;
+	std::string word;
 
-	std::cout << "Enter a number: " << std::endl;
-	std::cin >> numb;
+	std::cout << "Enter a word: " << std::endl;
+	std::cin >> word;
 	std::cout << "\n";
 
-	std::cout << "Your number: " << std::endl;
-	std::cout << numb << std::endl;
+	std::cout << "Your word: " << std::endl;
+	std::cout << word << std::endl;
 
 	return 0;
 }
