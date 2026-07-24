@@ -4,35 +4,26 @@
 // На моем Visual studio так и не хочет писаться на русском языке
 int main()
 {
-	std::cout << std::boolalpha;
-	std::cout << "Operator: ||" << std::endl;
+	double a, b, c;
+
+	std::cout << "Enter your first number: ";
+	std::cin >> a;
+
+	std::cout << "Enter your second number: ";
+	std::cin >> b;
+
+	std::cout << "Enter your third number: ";
+	std::cin >> c;
+
 	
-	bool a = true, b = true;	
-	std::cout << a << " " << b << " " << (a || b) << std::endl;
+	int max, mid, min;
+	//вот тут математика у меня вышла из чата. пришлось прибегать к помощи интернета
+	max = (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
+	min = (a < b) ? ((a < c) ? a : c) : ((b < c) ? b : c);
+	mid = a + b + c - max - min; 
 
-	a = false, b = true;
-	std::cout << a << " " << b << " " << (a || b) << std::endl;
+	std::cout << "Result: " << max << " " << mid << " " << min << std::endl;
 
-	a = true, b = false;
-	std::cout << a << " " << b << " " << (a || b) << std::endl;
-
-	a = false, b = false;
-	std::cout << a << " " << b << " " << (a || b) << std::endl;
-	std::cout << "\n";
-
-	std::cout << "Operator: &&" << std::endl;
-
-	a = true, b = true;
-	std::cout << a << " " << b << " " << (a && b) << std::endl;
-
-	a = false, b = true;
-	std::cout << a << " " << b << " " << (a && b) << std::endl;
-
-	a = true, b = false;
-	std::cout << a << " " << b << " " << (a && b) << std::endl;
-
-	a = false, b = false;
-	std::cout << a << " " << b << " " << (a && b) << std::endl;
 
 	return 0;
 }
