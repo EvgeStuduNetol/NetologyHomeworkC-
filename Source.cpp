@@ -7,17 +7,15 @@ int main()
 	SetConsoleOutputCP(65001);
 
 	int number = 0;
-	int sum = 0;
-
-	std::cout << "Введите целое число:" << std::endl;
+	
+	std::cout << "Введите целое цисло:" << std::endl;
 	std::cin >> number;
-
-	while (number != 0) 
+	 
+	for (int tab = 1; tab <= 10; tab = tab + 1 )
 	{
-		sum = sum + number % 10;
-		number = number / 10;
+		std::cout << number << " x " << tab << " = " << (number * tab) << std::endl;
 	}
-	std::cout << "Сумма цифр: " << sum << std::endl;
+
 
 	return 0;
 }
