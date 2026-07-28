@@ -9,17 +9,15 @@ int main()
 	int number = 0;
 	int sum = 0;
 
-	do
+	std::cout << "Введите целое число:" << std::endl;
+	std::cin >> number;
+
+	while (number != 0) 
 	{
-		std::cout << "Введите целое число или число '0', чтобы закончить:" << std::endl;
-		std::cin >> number;
-
-		sum = sum + number;
-	} 
-	
-	while (number != 0);
-
-	std::cout << "Сумма: " << sum << std::endl;
+		sum = sum + number % 10;
+		number = number / 10;
+	}
+	std::cout << "Сумма цифр: " << sum << std::endl;
 
 	return 0;
 }
