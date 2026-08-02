@@ -6,16 +6,17 @@ int main()
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
 
-	int number = 0;
-	
-	std::cout << "Введите целое цисло:" << std::endl;
-	std::cin >> number;
-	 
-	for (int tab = 1; tab <= 10; tab = tab + 1 )
-	{
-		std::cout << number << " x " << tab << " = " << (number * tab) << std::endl;
-	}
 
+	int array[10] = { 1,2,3,4,5,6,7,8,9,11 };
+
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << array[i];
+		if (i < 9) 
+		{
+			std::cout << ", ";
+		}
+	}
 
 	return 0;
 }
