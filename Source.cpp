@@ -7,16 +7,42 @@ int main()
 	SetConsoleOutputCP(65001);
 
 
-	int array[10] = { 1,2,3,4,5,6,7,8,9,11 };
+	int array[10] = { 100,95,80,75,60,15,40,35,20,55};
+
+	std::cout << "Массив: ";
 
 	for (int i = 0; i < 10; i++)
 	{
+
 		std::cout << array[i];
 		if (i < 9) 
 		{
-			std::cout << ", ";
+			std::cout << " ";
+		}
+	}
+	std::cout << std::endl;
+
+	int min = array[0];
+	int max = array[0];
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (array[i] < min)
+		{
+			min = array[i];
 		}
 	}
 
+	for (int i = 0; i < 10; i++)
+	{
+		if (array[i] > max)
+		{
+			min = array[i];
+		}
+	}
+	std::cout << "Минимальный элемент: " << min << std::endl;
+	std::cout << "Максимальный элемент: " << max << std::endl;
+
 	return 0;
 }
+
