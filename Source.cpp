@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include <cstdlib>
 
 int main()
 {
@@ -7,41 +8,54 @@ int main()
 	SetConsoleOutputCP(65001);
 
 
-	int array[10] = { 100,95,80,75,60,15,40,35,20,55};
+	int array[3][6];
+	int min = array[0][0];
+	int max = array[0][0];
+	int minStr = 0; //строка минимального элемента
+	int minStl = 0; //столбец минимального элемента
+	int maxStr = 0; //строка максимального элемента
+	int maxStl = 0; //столбец максимального элемента
 
-	std::cout << "Массив: ";
-
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 3;i++)
 	{
-
-		std::cout << array[i];
-		if (i < 9) 
+		for (int j=0;j<6;j++)
 		{
-			std::cout << " ";
-		}
-	}
-	std::cout << std::endl;
-
-	int min = array[0];
-	int max = array[0];
-
-	for (int i = 0; i < 10; i++)
-	{
-		if (array[i] < min)
-		{
-			min = array[i];
+			array[i][j] = rand() % 101;
 		}
 	}
 
-	for (int i = 0; i < 10; i++)
+	std::cout << "Массив: " << std::endl;
+
+	for (int i = 0; i < 3;i++)
 	{
-		if (array[i] > max)
+		for (int j = 0; j < 6;j++)
 		{
-			min = array[i];
+			std::cout << array[i][j] << "\t";
+
+			if (array[i][j] < min)
+			{
+				min = array[i][j];
+				minStr = i;
+				minStl = j;
+				
+			}
+
+			if (array[i][j] > max)
+			{
+				max = array[i][j];
+				maxStr = i;
+				maxStl = j;
+			}
+
+			
 		}
+		std::cout << std::endl;
 	}
-	std::cout << "Минимальный элемент: " << min << std::endl;
-	std::cout << "Максимальный элемент: " << max << std::endl;
+
+
+
+	std::cout << "Индекс минимального элемента: " << minStr << ' ' << minStl << std::endl;
+	std::cout << "Индекс максимального элемента: " << maxStr <<' ' << maxStl << std::endl;
 
 	return 0;
 }
