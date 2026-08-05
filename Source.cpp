@@ -25,11 +25,11 @@ int main()
 	for (int k = 0; k < 9; k++)
 	{
 		int swap_counter = 0;
-		for (int i = 0; i < 9 - k; i++)
+		for (int i = 9; i > 0; i--)
 		{
-			if (array[i] < array[i + 1])
+			if (array[i] < array[i - 1])
 			{
-				std::swap(array[i], array[i + 1]);
+				std::swap(array[i], array[i - 1]);
 				swap_counter++;
 			}
 		}
