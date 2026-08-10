@@ -2,48 +2,32 @@
 #include <windows.h>
 #include <cstdlib>
 
-/*int main()
+int result (int value, int power)
 {
-	SetConsoleCP(65001);
-	SetConsoleOutputCP(65001);
-
+	int step = 1;
 	
-}
-*/
-
-int sum(int a, int b)
-{
-	return a + b;
-}
-
-int diff(int a, int b)
-{
-	return a - b;
-}
-
-int multiplication(int a, int b)
-{
-	return a * b;
-}
-
-double division(double a, double b)
-{
-	return a / b;
+	for (int i = 0; i < power; i++)
+	{
+		step *= value;
+	}
+	return step;
 }
 
 int main(int argc, char** argv)
 {
-	int a = 5, b = 10;
+	SetConsoleCP(65001);
+	SetConsoleOutputCP(65001);
 
-	int s = sum(a, b);
-	int dif = diff(a, b);
-	int mult = multiplication(a, b);
-	double div = division(a, b);
+	int value = 5, power = 2;
+	std::cout << value << " в степени " << power << " = " << result(value, power) << std::endl;
 
-	std::cout << a << " + " << b << " = " << s << std::endl;
-	std::cout << a << " - " << b << " = " << dif << std::endl;
-	std::cout << a << " * " << b << " = " << mult << std::endl;
-	std::cout << a << " / " << b << " = " << div << std::endl;
+	value = 3;
+	power = 3;
+	std::cout << value << " в степени " << power << " = " << result(value, power) << std::endl;
+
+	value = 4;
+	power = 4;
+	std::cout << value << " в степени " << power << " = " << result(value, power) << std::endl;
 
 	return 0;
 }
