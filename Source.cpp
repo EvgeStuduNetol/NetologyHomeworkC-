@@ -2,32 +2,37 @@
 #include <windows.h>
 #include <cstdlib>
 
-int result (int value, int power)
+int result(int a)
 {
-	int step = 1;
-	
-	for (int i = 0; i < power; i++)
+	if (a == 0)
 	{
-		step *= value;
+		return 0;
 	}
-	return step;
+
+	if (a == 1) 
+	{
+		return 1;
+	}
+	return result(a - 1) + result(a - 2);
 }
 
-int main(int argc, char** argv)
+int main()
 {
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
 
-	int value = 5, power = 2;
-	std::cout << value << " в степени " << power << " = " << result(value, power) << std::endl;
+	int a;
 
-	value = 3;
-	power = 3;
-	std::cout << value << " в степени " << power << " = " << result(value, power) << std::endl;
+	std::cout << "Введите число: ";
+	std::cin >> a;
+	std::cout << std::endl;
 
-	value = 4;
-	power = 4;
-	std::cout << value << " в степени " << power << " = " << result(value, power) << std::endl;
+	std::cout << "Числа Фибоначчи : ";
+	for (int i = 0;i < a; i++) 
+	{
+		std::cout << result(i) << " ";
+	}
+	std::cout << std::endl;
 
 	return 0;
 }
