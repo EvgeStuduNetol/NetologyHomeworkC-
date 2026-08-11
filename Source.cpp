@@ -2,27 +2,25 @@
 #include <windows.h>
 #include <cstdlib>
 
-int main()
+void swap(int& a, int& b) 
+{
+	int c = a;
+	a = b;
+	b = c;
+}
+
+int main(int argc, char** argv)
 {
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
 
-	short a;
-	int b;
-	long c;
-	long long d;
-	float e;
-	double f;
-	long double g;
-	bool h;
+	int a = 5, b = 8;
 
-	std::cout << "Short: " << &a << " " << sizeof(a) << std::endl;
-	std::cout << "Int: " << &b << " " << sizeof(b) << std::endl;
-	std::cout << "Long: " << &c << " " << sizeof(c) << std::endl;
-	std::cout << "Long long: " << &d << " " << sizeof(d) << std::endl;
-	std::cout << "Float: " << &e << " " << sizeof(e) << std::endl;
-	std::cout << "Double: " << &f << " " << sizeof(f) << std::endl;
-	std::cout << "Long double: " << &g << " " << sizeof(g) << std::endl;
-	std::cout << "Bool: " << &h << " " << sizeof(h) << std::endl;
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+
+	swap(a, b);
+
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+
 	return 0;
 }
